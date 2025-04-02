@@ -23,7 +23,7 @@ Not usable yet, still porting.
 return {
    build_dir = "build",
    source_dir = "src",
-   global_env_def = "microcontroller",
+   global_env_def = "addon",
 }
 ```
 
