@@ -4,16 +4,31 @@
 
 <div align="center">
     <img src="https://img.shields.io/badge/Stormworks-Build%20and%20Rescue-blue?style=for-the-badge">
-    <img src="https://img.shields.io/badge/lua-%232C2D72.svg?style=for-the-badge&logo=lua&logoColor=white">
 </div>
 
 ## 📚 Overview
-A simple repo containing the Stormworks Addon Lua documentation.
+A simple repo containing a global environment definition file to let you write write Stormworks Addon Lua projects in Teal, using Cyan.
 
-All of the in-game documentation is ported to this repo via screenshots. They can be found in `/docs`. **These screenshots are no longer maintained.**
+Not usable yet, still porting.
 
-For intellisense (auto-completion, etc) with Visual Studio Code and the Lua extension, `/docs/intellisense.lua` is what you're loooking for.
+- More info on Teal: https://github.com/teal-language/tl
+- More info on Cyan: https://github.com/teal-language/cyan
+- Info on a "global environment definition": https://github.com/teal-language/tl/blob/master/docs/declaration_files.md
+
+## 💻 Getting started
+- Set up a project directory using `cyan`
+- Download `lib/addon.d.tl` and put it at the top level in your project directory.
+- Add `global_env_def = "addon",` to your `tlconfig.lua`. The result should look something like this:
+```lua
+return {
+   build_dir = "build",
+   source_dir = "src",
+   global_env_def = "microcontroller",
+}
+```
 
 ## 👨‍🦱 Credit
-- **[Cuh4](https://github.com/Cuh4)** - Maintainer
-- **[NameousChangey](https://github.com/nameouschangey)** & **[Toastery](https://github.com/Toast732)** - Original Creators of `/docs/intellisense.lua`
+This project started as addon lua documentation + intellisense file. Unmaintained documentation was stripped from this version, and the intellisense file was ported to a file that can be used as Teal's `global_env_def`.
+- **[JudgementalBird](https://github.com/JudgementalBird)** - Ported intellisense file to Teal.
+- **[Cuh4](https://github.com/Cuh4)** - Maintainer of addon Lua intellisense file that was forked.
+- **[NameousChangey](https://github.com/nameouschangey)** & **[Toastery](https://github.com/Toast732)** - Original Creators of what used to be `/docs/intellisense.lua`.

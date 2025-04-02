@@ -3,15 +3,16 @@
 ----------------------------------------
 
 --[[
-    This file contains every Addon Lua function, callback, and type.
-    Simply put this file in your code workspace and you should have intellisense support (auto-completion, etc) for Addon Lua.
+    This file contains every Addon Lua function and type, ported to teal.
+    Simply put this file in your workspace, and configure it as your `global_env_def` in your `tlconfig.lua`, and teal's compiler should stop complaining, and provide intellisense for Addon Lua.
 
-    This extension is required: https://marketplace.visualstudio.com/items?itemName=sumneko.lua
+    This extension is required for intellisense: https://marketplace.visualstudio.com/items?itemName=pdesaulniers.vscode-teal
 
-    Created by: @nameouschangey (GitHub) and @Toast732 (GitHub)
-    Maintained by: @Cuh4 (GitHub)
+    Lua version created by: @nameouschangey (GitHub) and @Toast732 (GitHub)
+    Lua version maintained by: @Cuh4 (GitHub)
+    Ported to Teal by @JudgementalBird (Github)
 
-    Repo: https://github.com/Cuh4/StormworksAddonLuaDocumentation
+    Lua repo: https://github.com/Cuh4/StormworksAddonLuaDocumentation
 ]]
 
 ----------------------------------------
@@ -24,6 +25,11 @@
 
     The following changelog entries are in DD/MM/YY format.
 
+    -- 02/04/2025
+        - Begin porting intellisense.lua to Teal global environment definition, renamed to addon.d.tl, host directory renamed to `lib`
+        - This means no more callback definitions, as to my knowledge they can not currently be specified to Teal's language server.
+        - Removed unmaintained documentation
+        - Updated README
     -- 15/01/2024
         - Added `group_id` return value to `server.spawnAddonVehicle` and `server.spawnVehicle` as the new game update v1.13.4 now returns the vehicle group ID with the aforementioned functions.
 
@@ -163,7 +169,8 @@
 
     server.announce("Server", "Hello World")
 ]]
-server = {}
+global record server
+end
 
 --[[
     A table containing functions that can be used for making your addon easily customizable by the user.<br>
@@ -174,7 +181,8 @@ server = {}
         ... -- anything else you want in g_savedata
     }
 ]]
-property = {}
+global record property
+end
 
 --[[
     A table containing functions that can be used for creating and manipulating matrices.<br>
@@ -183,15 +191,17 @@ property = {}
     local x, y, z = matrix.position(myMatrix)
 
     print(x, y, z) -- 0, 0, 0
-  ]]
-matrix = {}
+]]
+global record matrix
+end
 
 --[[
     A table containing debug-related functions. Only `debug.log` exists for now.<br>
 
     debug.log("Hello World")
 ]]
-debug = {}
+global record debug
+end
 
 --[[
     A table used for saving numbers, strings, and booleans across addon reloads and sessions.<br>
@@ -205,7 +215,7 @@ debug = {}
         print(g_savedata.example) -- "Hello World"
     end
 ]]
-g_savedata = {}
+global g_savedata: any = {}
 
 -------------------
 -- Matrices
