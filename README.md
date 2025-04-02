@@ -1,6 +1,6 @@
 ![In-Game Screenshot](imgs/1.png)
 
-# Stormworks Addon Lua Documentation
+# Teal global env defs for Stormworks Addon Lua
 
 <div align="center">
     <img src="https://img.shields.io/badge/Stormworks-Build%20and%20Rescue-blue?style=for-the-badge">
