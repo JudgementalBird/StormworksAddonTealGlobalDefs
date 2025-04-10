@@ -1,0 +1,582 @@
+--[[
+	I was going to make a series of string enums to use as helpers for this, so all enums I encountered were moved here.
+]]
+
+---@alias SWObjectTypeEnum
+---| 0 # none
+---| 1 # character
+---| 2 # crate_small
+---| 3 # collectable (Not spawnable)
+---| 4 # basketball
+---| 5 # television
+---| 6 # barrel
+---| 7 # schematic  (Not spawnable)
+---| 8 # debris  (Not spawnable)
+---| 9 # chair
+---| 10 # trolley_food
+---| 11 # trolley_med
+---| 12 # clothing  (Not spawnable)
+---| 13 # office_chair
+---| 14 # book
+---| 15 # bottle
+---| 16 # fryingpan
+---| 17 # mug
+---| 18 # saucepan
+---| 19 # stool
+---| 20 # telescope
+---| 21 # log
+---| 22 # bin
+---| 23 # book_2
+---| 24 # loot
+---| 25 # blue_barrel
+---| 26 # buoyancy_ring
+---| 27 # container
+---| 28 # gas_canister
+---| 29 # pallet
+---| 30 # storage_bin
+---| 31 # fire_extinguisher
+---| 32 # trolley_tool
+---| 33 # cafetiere
+---| 34 # drawers_tools
+---| 35 # glass
+---| 36 # microwave
+---| 37 # plate
+---| 38 # box_closed
+---| 39 # box_open
+---| 40 # desk_lamp
+---| 41 # eraser_board
+---| 42 # folder
+---| 43 # funnel
+---| 44 # lamp
+---| 45 # microscope
+---| 46 # notebook
+---| 47 # pen_marker
+---| 48 # pencil
+---| 49 # scales
+---| 50 # science_beaker
+---| 51 # science_cylinder
+---| 52 # science_flask
+---| 53 # tub_1
+---| 54 # tub_2
+---| 55 # filestack
+---| 56 # barrel_toxic
+---| 57 # flare
+---| 58 # fire
+---| 59 # animal
+---| 60 # map_label  (Not spawnable)
+---| 61 # iceberg    (Not spawnable)
+---| 62 # gun_flare
+---| 63 # vehicle_flare
+---| 64 # ammo_shell
+---| 65 # binoculars
+---| 66 # C4
+---| 67 # grenade
+---| 68 # vehicle_flare
+---| 69 # coal
+---| 70 # meteorite
+---| 71 # glowstick
+---| 72 # creature
+---| 73 # drill_rod
+---| 74 # fishing_lure
+
+---@alias SWAddonComponentDataTypeEnum
+---| 0 # zone
+---| 1 # object
+---| 2 # character
+---| 3 # vehicle
+---| 4 # flare
+---| 5 # fire
+---| 6 # loot
+---| 7 # button
+---| 8 # animal
+---| 9 # ice
+---| 10 # cargo_zone
+
+---@alias SWTankFluidTypeEnum
+---| 0 # freshwater
+---| 1 # diesel
+---| 2 # jetfuel
+---| 3 # air
+---| 4 # exhaust
+---| 5 # oil
+---| 6 # seawater
+---| 7 # steam
+---| 8 # slurry
+---| 9 # saturated slurry
+---| 10 # oxygen
+---| 11 # nitrogen
+---| 12 # hydrogen
+
+---@alias SWResourceTypeEnum
+---| 0 # coal
+---| 1 # iron
+---| 2 # aluminium
+---| 3 # gold
+---| 4 # gold_dirt
+---| 5 # uranium
+---| 6 # ingot_iron
+---| 7 # ingot_steel
+---| 8 # ingot_aluminium
+---| 9 # ingot_gold_impure
+---| 10 # ingot_gold
+---| 11 # ingot_uranium
+---| 12 # solid_propellant
+---| 13 # anchovy
+---| 14 # anglerfish
+---| 15 # arctic_char
+---| 16 # ballan_lizardfish
+---| 17 # ballan_wrasse
+---| 18 # barreleye_fish
+---| 19 # black_bream
+---| 20 # black_dragonfish
+---| 21 # clownfish
+---| 22 # cod
+---| 23 # dolphinfish
+---| 24 # gulper_eel
+---| 25 # haddock
+---| 26 # hake
+---| 27 # herring
+---| 28 # john_dory
+---| 29 # labrus
+---| 30 # lanternfish
+---| 31 # mackerel
+---| 32 # midshipman
+---| 33 # perch
+---| 34 # pike
+---| 35 # pinecone_fish
+---| 36 # pollock
+---| 37 # red_mullet
+---| 38 # rockfish
+---| 39 # sablefish
+---| 40 # salmon
+---| 41 # sardine
+---| 42 # scad
+---| 43 # sea_bream
+---| 44 # halibut
+---| 45 # sea_piranha
+---| 46 # seabass
+---| 47 # slimehead
+---| 48 # snapper
+---| 49 # gold_snapper
+---| 50 # snook
+---| 51 # spadefish
+---| 52 # trout
+---| 53 # tubeshoulders_fish
+---| 54 # viperfish
+---| 55 # yellowfin_tuna
+
+---@alias SWGameSettingEnum
+---| "photo_mode"
+---| "map_show_players"
+---| "sharks"
+---| "infinite_fuel"
+---| "lightning"
+---| "show_name_plates"
+---| "override_weather"
+---| "megalodon"
+---| "infinite_money"
+---| "night_length"
+---| "fast_travel"
+---| "cleanup_vehicle"
+---| "settings_menu"
+---| "settings_menu_lock"
+---| "rogue_mode"
+---| "ceasefire"
+---| "vehicle_damage"
+---| "vehicle_spawning"
+---| "engine_overheating"
+---| "third_person_vehicle"
+---| "infinite_ammo"
+---| "no_clip"
+---| "unlock_all_components"
+---| "day_length"
+---| "player_damage"
+---| "map_show_vehicles"
+---| "despawn_on_leave"
+---| "third_person"
+---| "infinite_batteries"
+---| "teleport_vehicle"
+---| "clear_fow"
+---| "npc_damage"
+---| "show_3d_waypoints"
+---| "map_teleport"
+---| "respawning"
+---| "unlock_all_islands"
+
+---@alias SWZoneTypeEnum
+---| 0 # box
+---| 1 # sphere
+---| 2 # radius
+
+---@alias SWLabelTypeEnum
+---| 0 # none
+---| 1 # cross
+---| 2 # wreckage
+---| 3 # terminal
+---| 4 # military
+---| 5 # heritage
+---| 6 # rig
+---| 7 # industrial
+---| 8 # hospital
+---| 9 # science
+---| 10 # airport
+---| 11 # coastguard
+---| 12 # lighthouse
+---| 13 # fuel
+---| 14 # fuel_sell
+---| 15 # hospital ship
+---| 16 # refuel_plane
+---| 17 # ore
+---| 18 # ingot
+---| 19 # fish
+---| 20 # dollar
+
+---@alias SWPositionTypeEnum
+---| 0 # fixed
+---| 1 # vehicle
+---| 2 # object
+
+---@alias SWMarkerTypeEnum
+---| 0 # delivery_target
+---| 1 # survivor
+---| 2 # object
+---| 3 # waypoint
+---| 4 # tutorial
+---| 5 # fire
+---| 6 # shark
+---| 7 # ice
+---| 8 # search_radius
+---| 9 # flag_1
+---| 10 # flag_2
+---| 11 # house
+---| 12 # car
+---| 13 # plane
+---| 14 # tank
+---| 15 # heli
+---| 16 # ship
+---| 17 # boat
+---| 18 # attack
+---| 19 # defend
+
+---@alias SWNotificationTypeEnum
+---| 0 new_mission
+---| 1 new_mission_critical
+---| 2 failed_mission
+---| 3 failed_mission_critical
+---| 4 complete_mission
+---| 5 network_connect
+---| 6 network_disconnect
+---| 7 network_info
+---| 8 chat_message
+---| 9 rewards
+---| 10 network_info_critical
+---| 11 research_complete
+
+---@alias SWOutfitTypeEnum
+---| 0 # none
+---| 1 # worker
+---| 2 # fishing
+---| 3 # waiter
+---| 4 # swimsuit
+---| 5 # military
+---| 6 # office
+---| 7 # police
+---| 8 # science
+---| 9 # medical
+---| 10 # wetsuit
+---| 11 # civilian
+
+---@alias SWAnimalTypeEnum
+---| 0 # shark
+---| 1 # whale
+---| 4 # kraken
+
+---@alias SWCreatureTypeEnum
+---| 0 # badger_common
+---| 1 # bear_grizzly
+---| 2 # bear_black
+---| 3 # bear_polar
+---| 4 # chicken_barnevelder
+---| 5 # chicken_marans
+---| 6 # chicken_orpington_fowl
+---| 7 # chicken_sussex_fowl
+---| 8 # cow_angus
+---| 9 # cow_hereford
+---| 10 # cow_highland
+---| 11 # cow_holstein
+---| 12 # sasquatch
+---| 13 # yeti
+---| 14 # deer_red_f
+---| 15 # deer_red_m
+---| 16 # deer_sika_f
+---| 17 # deer_sika_m
+---| 18 # dog_beagle
+---| 19 # dog_border_collie
+---| 20 # dog_boxer
+---| 21 # dog_corgi
+---| 22 # dog_dachschund
+---| 23 # dog_dalmatian
+---| 24 # dog_dobermann
+---| 25 # dog_german_shepherd
+---| 26 # dog_greyhound
+---| 27 # dog_jack_russell
+---| 28 # dog_labrador
+---| 29 # dog_newfoundland
+---| 30 # dog_pug
+---| 31 # dog_shiba
+---| 32 # dog_siberian_husky
+---| 33 # dog_st_bernard
+---| 34 # dog_vizsla
+---| 35 # dog_yorkshire_terrier
+---| 36 # fox_red
+---| 37 # fox_arctic
+---| 38 # goat_alpine
+---| 39 # goat_bengal
+---| 40 # goat_oberhasli
+---| 41 # goat_saanen
+---| 42 # hare_arctic
+---| 43 # hare_irish
+---| 44 # hare_mountain
+---| 45 # horse_clydesdale
+---| 46 # horse_friesian
+---| 47 # horse_haflinger
+---| 48 # horse_welara
+---| 49 # muntjac_f
+---| 50 # muntjac_m
+---| 51 # penguin_gentoo
+---| 52 # pig_angeln_saddleback
+---| 53 # pig_old_spot
+---| 54 # pig_tamworth
+---| 55 # pig_yorkshire
+---| 56 # seal_polar
+---| 57 # sheep_black_nose
+---| 58 # sheep_highlander
+---| 59 # sheep_mule
+---| 60 # wildcat_scottish
+---| 61 # wolf_arctic
+---| 62 # wolf_costal
+---| 63 # wolf_plains
+---| 64 # zombie_male
+---| 65 # zombie_male_a
+---| 66 # zombie_male_b
+---| 67 # zombie_male_c
+---| 68 # zombie_male_d
+---| 69 # zombie_male_e
+---| 70 # zombie_male_f
+---| 71 # zombie_male_g
+---| 72 # zombie_male_nurse
+---| 73 # zombie_male_arctic
+---| 74 # zombie_male_firefighter
+---| 75 # zombie_male_pilot
+---| 76 # zombie_male_police
+---| 77 # zombie_male_ranger
+---| 78 # zombie_male_scuba
+---| 79 # zombie_male_tree_surgeon
+---| 80 # zombie_female
+---| 81 # zombie_female_a
+---| 82 # zombie_female_b
+---| 83 # zombie_female_c
+---| 84 # zombie_female_d
+---| 85 # zombie_female_e
+---| 86 # zombie_female_f
+---| 87 # zombie_female_arctic
+---| 88 # zombie_female_firefighter
+---| 89 # zombie_female_hazmat
+---| 90 # zombie_female_pilot
+---| 91 # zombie_female_pirate
+---| 92 # zombie_female_police
+---| 93 # zombie_female_safari
+---| 94 # zombie_female_sar
+---| 95 # zombie_female_scuba
+---| 96 # zombie_female_surgeon
+---| 97 # buffalo
+---| 98 # sheep_bighorn
+---| 99 # roadrunner
+---| 100 # lion_mountain
+---| 101 # crocodile
+---| 102 # coyote
+---| 103 # gila_monster
+---| 104 # tortise_desert
+
+---@alias SWSlotNumberEnum
+---| 1 # Large_Equipment_Slot
+---| 2 # Small_Equipment_Slot
+---| 3 # Small_Equipment_Slot
+---| 4 # Small_Equipment_Slot
+---| 5 # Small_Equipment_Slot
+---| 6 # Small_Equipment_Slot
+---| 7 # Small_Equipment_Slot
+---| 8 # Small_Equipment_Slot
+---| 9 # Small_Equipment_Slot
+---| 10 # Outfit_Slot
+
+---@alias SWEquipmentTypeEnum
+---| 0 # none
+---| 1 # diving
+---| 2 # firefighter
+---| 3 # scuba
+---| 4 # parachute [int = {0 = deployed, 1 = ready}]
+---| 5 # arctic
+---| 6 # binoculars
+---| 7 # cable
+---| 8 # compass
+---| 9 # defibrillator [int = charges]
+---| 10 # fire_extinguisher [float = ammo]
+---| 11 # first_aid [int = charges]
+---| 12 # flare [int = charges]
+---| 13 # flaregun [int = ammo]
+---| 14 # flaregun_ammo [int = ammo]
+---| 15 # flashlight [float = battery]
+---| 16 # hose [int = {0 = hose off, 1 = hose on}]
+---| 17 # night_vision_binoculars [float = battery]
+---| 18 # oxygen_mask [float = oxygen]
+---| 19 # radio [int = channel] [float = battery]
+---| 20 # radio_signal_locator [float = battery]
+---| 21 # remote_control [int = channel] [float = battery]
+---| 22 # rope
+---| 23 # strobe_light [int = {0 = off, 1 = on}] [float = battery]
+---| 24 # strobe_light_infrared [int = {0 = off, 1 = on}] [float = battery]
+---| 25 # transponder [int = {0 = off, 1 = on}] [float = battery]
+---| 26 # underwater_welding_torch [float = charge]
+---| 27 # welding_torch [float = charge]
+---| 28 # coal
+---| 29 # hazmat
+---| 30 # radiation_detector [float = battery]
+---| 31 # c4 [int = ammo]
+---| 32 # c4_detonator
+---| 33 # speargun [int = ammo]
+---| 34 # speargun_ammo
+---| 35 # pistol [int = ammo]
+---| 36 # pistol_ammo
+---| 37 # smg [int = ammo]
+---| 38 # smg_ammo
+---| 39 # rifle [int = ammo]
+---| 40 # rifle_ammo
+---| 41 # grenade [int = ammo]
+---| 42 # machine_gun_ammo_box_k
+---| 43 # machine_gun_ammo_box_he
+---| 44 # machine_gun_ammo_box_he_frag
+---| 45 # machine_gun_ammo_box_ap
+---| 46 # machine_gun_ammo_box_i
+---| 47 # light_auto_ammo_box_k
+---| 48 # light_auto_ammo_box_he
+---| 49 # light_auto_ammo_box_he_frag
+---| 50 # light_auto_ammo_box_ap
+---| 51 # light_auto_ammo_box_i
+---| 52 # rotary_auto_ammo_box_k
+---| 53 # rotary_auto_ammo_box_he
+---| 54 # rotary_auto_ammo_box_he_frag
+---| 55 # rotary_auto_ammo_box_ap
+---| 56 # rotary_auto_ammo_box_i
+---| 57 # heavy_auto_ammo_box_k
+---| 58 # heavy_auto_ammo_box_he
+---| 59 # heavy_auto_ammo_box_he_frag
+---| 60 # heavy_auto_ammo_box_ap
+---| 61 # heavy_auto_ammo_box_i
+---| 62 # battle_shell_k
+---| 63 # battle_shell_he
+---| 64 # battle_shell_he_frag
+---| 65 # battle_shell_ap
+---| 66 # battle_shell_i
+---| 67 # artillery_shell_k
+---| 68 # artillery_shell_he
+---| 69 # artillery_shell_he_frag
+---| 70 # artillery_shell_ap
+---| 71 # artillery_shell_i
+---| 72 # glowstick
+---| 73 # dog_whistle
+---| 74 # bomb_disposal
+---| 75 # chest_rig
+---| 76 # black_hawk_vest
+---| 77 # plate_vest
+---| 78 # armor_vest
+---| 79 # space_suit
+---| 80 # exploration_space_suit
+---| 81 # fishing rod
+---| 82 # anchovie [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 83 # anglerfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 84 # arctic_char [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 85 # ballan_lizardfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 86 # ballan_wrasse [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 87 # barreleye_fish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 88 # black_Bream [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 89 # black_dragonfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 90 # clown_fish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 91 # cod [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 92 # dolphinfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 93 # gulper_eel [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 94 # haddock [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 95 # hake [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 96 # herring [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 97 # john_dory [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 98 # labrus [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 99 # lanternfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 100 # mackerel [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 101 # midshipman [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 102 # perch [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 103 # pike [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 104 # pinecone_fish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 105 # pollack [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 106 # red_mullet [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 107 # rockfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 108 # sablefish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 109 # salmon [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 110 # sardine [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 111 # scad [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 112 # sea_bream [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 113 # sea_halibut [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 114 # sea_piranha [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 115 # seabass [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 116 # slimehead [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 117 # snapper [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 118 # snapper_gold [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 119 # snook [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 120 # spadefish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 121 # trout [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 122 # tubeshoulders_fish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 123 # viperfish [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 124 # yellowfin_tuna [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 125 # blue_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 126 # brown_box_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 127 # coconut_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 128 # dungeness_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 129 # furry_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 130 # homarus_americanus [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 131 # homarus_gammarus [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 132 # horseshoe_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 133 # jasus_edwardsii [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 134 # jasus_lalandii [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 135 # jonah_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 136 # king_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 137 # mud_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 138 # munida_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 139 # ornate_rock_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 140 # panulirus_interruptus [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 141 # red_king_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 142 # reef_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 143 # slipper_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 144 # snow_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 145 # southern_rock_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 146 # spider_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 147 # spiny_lobster [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+---| 148 # stone_crab [int = fish {0 = idle, 1 = flee, 2 = flop, 3 = dead}]
+
+
+---@alias SWRopeTypeEnum
+---| 0 # rope
+---| 1 # hose
+---| 2 # electric_cable
+---| 4 # suspension_cable
+---| 6 # fishing_line
+
+---@alias SWAudioMoodEnum
+---| 0 # none (cannot be set)
+---| 1 # main_menu (cannot be set)
+---| 2 # mood_normal
+---| 3 # mood_mission_mid
+---| 4 # mood_mission_high
+
+---@alias SWEventIDEnum
+---| 0 # NONE
+---| 1 # Halloween
+---| 2 # Christmas
